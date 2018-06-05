@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<package name="zw" extends="struts-default">
+<action name="judgeEmailAction" class="teacherAction.judgeEmailAction">
+<result name="success">/teacher/setEmail.jsp</result>
+<result name="input">/teacher/tea_index.jsp</result>
+</action>
+<action name="loginAction" class="loginAction.LoginAction">
+<result name="success">/student/stu_index.jsp</result>
+<result name="tsuccess" type="chain">judgeEmailAction</result>
+<result name="asuccess">/admin/setEmail.jsp</result>
+<result name="input">/index.jsp</result>
+</action>
+<action name="setEmailAction" class="teacherAction.SetEmailAction">
+<result name="success">/teacher/tea_index.jsp</result>
+<result name="input">/teacher/setEmail.jsp</result>
+</action>
+<action name="uploadAction" class="teacherAction.UploadAction">
+<result name="success">/teacher/success.jsp</result>
+<result name="input">/teacher/upload.jsp</result>
+</action>
+<action name="lookMessageAction" class="teacherAction.LookMessageAction">
+<result name="success">/teacher/lookMessage.jsp</result>
+<result name="input">/teacher/tea_index.jsp</result>
+</action>
+<action name="findCourseAction" class="teacherAction.FindCourseAction">
+<result name="success">/teacher/lookCourse.jsp</result>
+<result name="input">/teacher/tea_index.jsp</result>
+</action>
+<action name="findTeacherAction" class="teacherAction.FindTeacherAction">
+<result name="success">/teacher/lookPerson.jsp</result>
+<result name="input">/teacher/tea_index.jsp</result>
+</action>
+<action name="changePwdAction" class="teacherAction.ChangePwdAction">
+<result name="success">/teacher/success.jsp</result>
+<result name="input">/teacher/changePwd.jsp</result>
+</action>
+</package>
+</struts>    
