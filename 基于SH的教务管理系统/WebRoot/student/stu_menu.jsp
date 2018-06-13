@@ -121,16 +121,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <div id="foldmenu" class="foldmenu" style="float:left;">
  <ul class="open">
   <span>常用操作</span>
- <li><a href="#">学生学籍</a></li>
- <li><a href="#">成绩查询</a></li>
- <li><a href="#">修改个人信息</a></li>
- <li><a href="#">密码修改</a></li>
+ <li><a href="slookMessageAction">学生学籍</a></li>
+ <li><a href="lookRequiredScoreAction">成绩查询</a></li>
+ <li><a href="<%=request.getContextPath()%>/student/changePwd.jsp">密码修改</a></li>
  </ul>
  <ul>
   <span>选课系统</span>
- <li><a href="#">进入选课</a></li>
- <li><a href="#">已选课程</a></li>
-  <li><a href="#">选课成绩</a></li>
+ <li><a href="getElectiveAction">进入选课</a></li>
+ <li><a href="lookElectiveAction">已选课程</a></li>
+  <li><a href="lookElectiveScoreAction">选课成绩</a></li>
  </ul>
 </div>
 <script type="text/javascript">

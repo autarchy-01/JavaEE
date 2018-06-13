@@ -29,14 +29,16 @@ public class TeacherDao {
 				if(s!=null){
 					session.close();
 					return true;
-				}
-			} catch (Exception e) {
+					}
+				} catch (Exception e) {
+				if(session!=null){
+					session.close();
+					}
 				System.out.println("查询失败"+e);
+				}
 			}
-		}
 		return false;
-		
-	}
+		}
 	/**
 	 * 保存成绩
 	 * @param score Selclass对象
@@ -48,11 +50,14 @@ public class TeacherDao {
 			session.save(score);//对象持久化
 			transaction.commit();//提交事务
 			session.close();//关闭session
-		}catch (Exception e) {
+			}catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("saveScore.error:"+e);
 			e.printStackTrace();
+			}
 		}
-	}
 	/**
 	 * 查询学生信息
 	 * @param hql 查询语句
@@ -67,14 +72,16 @@ public class TeacherDao {
 			query = session.createQuery(hql).setFirstResult(offset).setMaxResults(pageSize);
 			list=query.list();
 			session.close();
-		}catch (Exception e) {
+			}catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("findInfo.erro"+e);
 			e.printStackTrace();
 			return null;
-		}
+			}
 		return list;
-		
-	}
+		}
 	/**
 	 * 查询总记录条数
 	 * @param hql 查询语句
@@ -88,14 +95,16 @@ public class TeacherDao {
 			query=session.createQuery(hql);
 			allRows = query.list().size();
 			session.close();
-		}catch (Exception e) {
+			}catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("getStudentAmount.erro"+e);
 			e.printStackTrace();
 			return studentAmount;
-		}
+			}
 		return allRows;
-		
-	}
+		}
 	/**
 	 * 查询课程信息
 	 * @param teaId 登录教师的id
@@ -109,13 +118,15 @@ public class TeacherDao {
 			List list=query.list();
 			session.close();
 			return list;
-		}catch (Exception e) {
+			}catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("findCourse.erro"+e);
 			e.printStackTrace();
 			return null;
+			}
 		}
-		
-	}
 	/**
 	 * 获取一条Teacher的记录
 	 * @param teaId 要获取的id号
@@ -127,17 +138,19 @@ public class TeacherDao {
 			Teacher teacher=(Teacher)session.get(Teacher.class, teaId);
 			session.close();
 			return teacher;
-		} catch (Exception e) {
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("getTeacher.erro"+e);
 			e.printStackTrace();
 			return null;
+			}
 		}
-		
-	}
 	/**
 	 * 设置email
-	 * @param teaId int 教师id
-	 * @param email String 教师email
+	 * @param teaId  教师id
+	 * @param email  教师email
 	 * @return boolean
 	 */
 	public boolean setEmail(int teaId,String email) {
@@ -148,14 +161,23 @@ public class TeacherDao {
 			tea.setEmail(email);
 			session.update(tea);
 			transaction.commit();
+			session.close();
 			return true;
-		} catch (Exception e) {
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
 			message("setEmail.erro"+e);
 			e.printStackTrace();
 			return false;
+			}
 		}
-		
-	}
+	/**
+	 * 修改教师密码
+	 * @param teaId 教师id
+	 * @param password 新密码
+	 * @return boolean
+	 */
 	public boolean changePwd(int teaId,String password) {
 		try {
 			session=HibernateSessionFactory.getSession();
@@ -164,13 +186,61 @@ public class TeacherDao {
 			tea.setPassword(password);
 			session.update(tea);
 			transaction.commit();
+			session.close();
 			return true;
-		} catch (Exception e) {
-			message("setEmail.erro"+e);
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
+			message("changePwd.erro"+e);
 			e.printStackTrace();
 			return false;
+			}
 		}
-	}
+	/**
+	 * 查找成绩
+	 * @param id 封装了学号和课程号的SelclassId对象
+	 * @return List集合
+	 */
+	public Selclass getScore(SelclassId id) {
+		try {
+			String hql="from Selclass s where s.id.stuId="+id.getStuId()+"and s.id.couId="+id.getCouId();
+			session=HibernateSessionFactory.getSession();
+			query=session.createQuery(hql);
+			Selclass s=(Selclass)query.list().get(0);
+			session.close();
+			return s;			
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
+			message("getScore.erro"+e);
+			e.printStackTrace();
+			return null;
+			}
+		}
+	/**
+	 * 更新成绩
+	 * @param score 封装了成绩,学号,课程号的Selclass对象
+	 * @return boolean
+	 */
+	public boolean updateScore(Selclass score) {
+		try {
+			session=HibernateSessionFactory.getSession();
+			transaction=session.beginTransaction();
+			session.update(score);
+			transaction.commit();
+			session.close();
+			return true;
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
+			message("updateScore.erro"+e);
+			e.printStackTrace();
+			return false;
+			}
+		}
 	/**
 	 * 报错提示
 	 * @param mess 
@@ -179,7 +249,5 @@ public class TeacherDao {
 		int type=JOptionPane.YES_NO_OPTION;
 		String title ="提示信息";
 		JOptionPane.showMessageDialog(null, mess,title,type);
+		}
 	}
-	
-
-}

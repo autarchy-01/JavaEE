@@ -11,7 +11,7 @@ public abstract class AbstractCourse implements java.io.Serializable {
 
 	private Integer couId;
 	private Integer teaId;
-	private String type;
+	private String typ;
 	private Integer max;
 	private String room;
 	private String time;
@@ -28,13 +28,25 @@ public abstract class AbstractCourse implements java.io.Serializable {
 	public AbstractCourse(Integer couId) {
 		this.couId = couId;
 	}
+    public AbstractCourse(Integer couId,String couName,Integer max) {
+    	this.couId = couId;
+    	this.couName = couName;
+    	this.max = max;
+	}
+    public AbstractCourse(Integer couId,String couName,Integer max,String room,String time) {
+    	this.couId = couId;
+    	this.couName = couName;
+    	this.max = max;
+    	this.room = room;
+		this.time = time;
+	}
 
 	/** full constructor */
-	public AbstractCourse(Integer couId, Integer teaId, String type, Integer max, String room, String time, String mark,
+	public AbstractCourse(Integer couId, Integer teaId, String typ, Integer max, String room, String time, String mark,
 			String couName) {
 		this.couId = couId;
 		this.teaId = teaId;
-		this.type = type;
+		this.typ = typ;
 		this.max = max;
 		this.room = room;
 		this.time = time;
@@ -60,12 +72,12 @@ public abstract class AbstractCourse implements java.io.Serializable {
 		this.teaId = teaId;
 	}
 
-	public String getType() {
-		return this.type;
+	public String getTyp() {
+		return this.typ;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setTyp(String typ) {
+		this.typ = typ;
 	}
 
 	public Integer getMax() {

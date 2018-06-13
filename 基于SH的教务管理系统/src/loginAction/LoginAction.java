@@ -46,7 +46,7 @@ public class LoginAction extends ActionSupport{
 				HttpSession session=request.getSession();
 				Student stu1=sm.getStudent(Integer.parseInt(getSno()));
 				session.setAttribute("username", stu1.getUsername());
-				session.setAttribute("id", this.getSno());
+				session.setAttribute("id", stu1.getStuId());
 				return SUCCESS;
 			}
 			

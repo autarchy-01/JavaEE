@@ -7,7 +7,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import Dao.TeacherDao;
 import PO.Teacher;
 
-public class judgeEmailAction extends ActionSupport{
+public class JudgeEmailAction extends ActionSupport{
 	private HttpServletRequest request;
 	public String execute() throws Exception{
 		TeacherDao dao=new TeacherDao();

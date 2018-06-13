@@ -23,14 +23,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
-  <table bgcolor="cyan" width="100%" border="0" cellpadding="0" cellspacing="0" background="">
-  <tr>
-  <td width="20%" height="60"><h2>教务管理系统</h2></td>
+  <body style="background: url('images/top.gif') no-repeat;background-size: 100% 100%">
+  <table width="100%" height="80" border="0" cellpadding="0" cellspacing="0">
+  <tr height="60">
+  <td width="20%"><h2>教务管理系统</h2></td>
   <td width="80%" align="right" valign="bottom">
   <table width="750" border="0" cellpadding="0" cellspacing="0">
   <tr>
-  <td align="right" height="26" style="padding-right: 10px;line-height: 26px;vertical-align: middle;">
+  <td align="right" height="47" style="padding-right: 10px;line-height: 26px;vertical-align: middle;">
   	您好:<span><s:property value="#session.username" /></span>,欢迎登陆教务管理系统!
   	[<a href="<%=request.getContextPath()%>/index.jsp" target="_blank">登录页面</a>]
   	[<a href="#" target="main">修改密码</a>]

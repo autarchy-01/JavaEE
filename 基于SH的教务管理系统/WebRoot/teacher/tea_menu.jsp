@@ -107,7 +107,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <style type="text/css">
 *{margin:0;padding:0;}
-.foldmenu{border:1px solid #000;width:150px;margin:50px;}
+.foldmenu{border:0px solid #000;width:150px;margin:50px;}
 .foldmenu ul{list-style-type:none;height:25px;line-height:25px;overflow:hidden;cursor:pointer;}
 .foldmenu ul.open{height:auto;color: cyan}
 .foldmenu ul span{display:block;padding-left:5px;font-size:20px }
@@ -122,7 +122,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <ul class="open">
   <span>学生管理</span>
  <li><a href="<%=request.getContextPath()%>/teacher/upload.jsp">上传成绩</a></li>
- <li><a href="#">修改成绩</a></li>
+ <li><a href="<%=request.getContextPath()%>/teacher/findScore.jsp">修改成绩</a></li>
  <li><a href="lookMessageAction">查询学生信息</a></li>
  </ul>
  <ul>

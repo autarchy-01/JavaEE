@@ -13,8 +13,8 @@
         <property name="teaId" type="java.lang.Integer">
             <column name="tea_id" />
         </property>
-        <property name="type" type="java.lang.String">
-            <column name="type" length="45" />
+        <property name="typ" type="java.lang.String">
+            <column name="typ" length="45" />
         </property>
         <property name="max" type="java.lang.Integer">
             <column name="max" />

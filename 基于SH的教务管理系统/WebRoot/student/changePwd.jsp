@@ -9,7 +9,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>My JSP 'success.jsp' starting page</title>
+    <title></title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,6 +23,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    success <br>
+  <center>
+  <h3>设置你的新密码</h3>
+  <br>
+  <hr>
+  <form action="schangePwdAction">
+  密码:<input type="text" name="password"> &nbsp;&nbsp;&nbsp;<input type="submit" value="提交">
+  </form>
+  </center>
   </body>
 </html>

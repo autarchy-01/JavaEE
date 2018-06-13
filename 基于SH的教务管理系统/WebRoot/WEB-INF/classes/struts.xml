@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<package name="zw" extends="struts-default">
-<action name="judgeEmailAction" class="teacherAction.judgeEmailAction">
+<package name="teacher" extends="struts-default">
+<action name="judgeEmailAction" class="teacherAction.JudgeEmailAction">
 <result name="success">/teacher/setEmail.jsp</result>
 <result name="input">/teacher/tea_index.jsp</result>
 </action>
@@ -35,6 +35,42 @@
 <action name="changePwdAction" class="teacherAction.ChangePwdAction">
 <result name="success">/teacher/success.jsp</result>
 <result name="input">/teacher/changePwd.jsp</result>
+</action>
+<action name="findScoreAction" class="teacherAction.FindScoreAction">
+<result name="success">/teacher/changeScore.jsp</result>
+<result name="input">/teacher/findScore.jsp</result>
+</action>
+<action name="changeScoreAction" class="teacherAction.ChangeScoreAction">
+<result name="success" type="chain">lookMessageAction</result>
+<result name="input">/teacher/findScore.jsp</result>
+</action>
+</package>
+<package name="student" extends="struts-default">
+<action name="slookMessageAction" class="studentAction.LookMessageAction">
+<result name="success">/student/lookMessage.jsp</result>
+</action>
+<action name="lookRequiredScoreAction" class="studentAction.FindScoreAction">
+<result name="success">/student/lookRequiredScore.jsp</result>
+<result name="input">/index.jsp</result>
+</action>
+<action name="schangePwdAction" class="studentAction.ChangePwdAction">
+<result name="success">/student/success.jsp</result>
+<result name="input">/student/changePwd.jsp</result>
+</action>
+<action name="getElectiveAction" class="studentAction.getElectiveAction">
+<result name="success">/student/getElective.jsp</result>
+<result name="input">/index.jsp</result>
+</action>
+<action name="setElectiveAction" class="studentAction.setElectiveAction">
+<result name="success">/student/getElective.jsp</result>
+<result name="input">/index.jsp</result>
+</action>
+<action name="lookElectiveAction" class="studentAction.LookElectiveAction">
+<result name="success">/student/lookElective.jsp</result>
+<result name="input">/index.jsp</result>
+</action>
+<action name="lookElectiveScoreAction" class="studentAction.LookElectiveScoreAction">
+<result name="success">/student/lookElectiveScore.jsp</result>
 </action>
 </package>
 </struts>    
