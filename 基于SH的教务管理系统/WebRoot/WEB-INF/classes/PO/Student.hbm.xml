@@ -25,9 +25,6 @@
         <property name="jiguan" type="java.lang.String">
             <column name="jiguan" length="45" />
         </property>
-        <property name="mark" type="java.lang.Integer">
-            <column name="mark" />
-        </property>
         <property name="email" type="java.lang.String">
             <column name="email" length="45" />
         </property>

@@ -110,20 +110,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 .foldmenu{border:0px solid #000;width:150px;margin:50px;}
 .foldmenu ul{list-style-type:none;height:25px;line-height:25px;overflow:hidden;cursor:pointer;}
 .foldmenu ul.open{height:auto;color: cyan}
-.foldmenu ul span{display:block;padding-left:5px;font-size:20px }
+.foldmenu ul span{display:block;padding-left:5px;font-size:25px;color:white }
 .foldmenu ul li{border-bottom:1px solid #DDDDDD;}
-.foldmenu li a{background-color:#EEEEEE;color:#006666;display:block;padding:5px 10px;text-decoration:none;text-align:center;}
+.foldmenu li a{background-color:white;color:white;display:block;padding:5px 10px;text-decoration:none;text-align:center;}
 .foldmenu li a:hover{background-color:#006666;color:#ffffff;}
 .foldmenu li a.current{background-color:#006666;color:#ffffff;}
 </style>
 </head>
-<body>
+<body style="background: url('images/左.png') no-repeat;">
 <div id="foldmenu" class="foldmenu" style="float:left;">
  <ul class="open">
   <span>学生管理</span>
- <li><a href="<%=request.getContextPath()%>/teacher/upload.jsp">上传成绩</a></li>
+ <li><a href="<%=request.getContextPath()%>/upload/upload.jsp">上传成绩</a></li>
  <li><a href="<%=request.getContextPath()%>/teacher/findScore.jsp">修改成绩</a></li>
- <li><a href="lookMessageAction">查询学生信息</a></li>
+ <li><a href="lookMessageAction?a=0">查询学生信息</a></li>
  </ul>
  <ul>
   <span>课程管理</span>
@@ -132,7 +132,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <ul>
   <span>信息管理</span>
  <li><a href="findTeacherAction">查看个人信息</a></li>
-  <li><a href="<%=request.getContextPath()%>/teacher/changePwd.jsp">修改密码</a></li>
+  <li><a href="<%=request.getContextPath()%>/password/changePwd.jsp">修改密码</a></li>
  </ul>
 </div>
 <script type="text/javascript">

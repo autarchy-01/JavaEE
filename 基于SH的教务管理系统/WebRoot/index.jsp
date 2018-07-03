@@ -16,26 +16,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" type="text/css" href="css/login.css">
   </head>
   
-  <body style="background: url('images/登录页面2.jpg') no-repeat;">
+  <body style="
+               background:url('images/登录页面.png');
+               background-repeat: no-repeat;
+               background-size: cover;
+               ">
   <s:form action="loginAction" method="post">
-  <table class="style1">
+  <table class="style1" cellspacing="18">
   <tr>
-  <td><span>用户:</span></td>
-   <td><input type="text" name="sno"></td>
-    <td><label><input type="radio" name="radiobutton" value="1" checked="checked">学生</label></td>
+   <td>
+   <input type="text" name="sno" class="username" 
+    style="
+    background:url(images/用户名.png)no-repeat scroll left center transparent;
+    border:2px solid #2f73d8;float:left;border-radius:5px;
+    ">
+    </td>
   </tr>
     <tr>
-  <td><span>密码:</span></td>
-   <td><input type="password" name="password"></td>
-    <td><label><input type="radio" name="radiobutton" value="2" checked="checked">教师</label></td>
+   <td><input type="password" name="password"  class="password"
+    style="
+    background:url(images/密码.png)no-repeat scroll left center transparent;
+    border:2px solid #2f73d8;float:left; border-radius:5px;">
+   </td>
+  </tr>
+  <tr>
+  <td colspan="10" style="width: 386px; "><span style="font-size:20;color:#003366;">权  限</span>
+    <select name="radiobutton" style="width: 336px; height: 46px; border-right: #000000 1px solid;
+     border-top: #ffffff 0px solid;
+     font-size: 20px; 
+     border-left: #ffffff 1px solid;
+     color:#003366;
+     border-bottom: #000000 1px solid;
+     background-color: #f4f4f4;
+     border-radius:4px;">
+    <option value="1">学        生</option>
+    <option value="2">教        师</option>
+    <option value="3">管   理  员</option>
+    </select></td>
   </tr>
       <tr>
-  <td><input type="submit" value="登录"></td>
-   <td><input type="reset" value="重置"></td>
-    <td><label><input type="radio" name="radiobutton" value="3" checked="checked">管理员</label></td>
+  <td><input type="submit" value="登  录" class="login" style="background-color:#396ebe;
+  border-radius:5px;outline:none;border:0px"></td>
+  </tr>
+  <tr>
+   <td ><input type="reset" value="重  置" class="login"style="background-color:#396ebe ;
+   border-radius:5px;outline:none;border:0px"></td>
   </tr>
   </table>
   </s:form>

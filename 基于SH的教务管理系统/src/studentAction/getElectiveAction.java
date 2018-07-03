@@ -18,12 +18,10 @@ public class getElectiveAction extends ActionSupport{
 		request=ServletActionContext.getRequest();
 		HttpSession session=request.getSession();
 		//判断学生选课是否超过其最大选课数
-		if(dao.getElectiveNumber((Integer)session.getAttribute("id"))<dao.getStudent((Integer)session.getAttribute("id")).getMax()){
+		if(dao.getElectiveNumber((Integer)session.getAttribute("id"))<=dao.getStudent((Integer)session.getAttribute("id")).getMax()){
 			List list=dao.getElective();
-			if(list.size()!=0){
 				session.setAttribute("elective", list);
 				return SUCCESS;
-				}
 			}
 		return INPUT;
 		}

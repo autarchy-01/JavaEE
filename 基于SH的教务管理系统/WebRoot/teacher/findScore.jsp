@@ -22,11 +22,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <body>
   <center>
   <h3>搜索要修改的学生学号和课程号</h3>
-  <s:form action="findScoreAction" method="post">
-  <s:label value="学号"/><s:textfield name="stuId"></s:textfield>
-  <s:label value="课程号"/><s:textfield name="couId"></s:textfield>
-  <s:submit value="查询"></s:submit>
-  </s:form>
+  <form action="findScoreAction" method="post">
+  学&nbsp;&nbsp;号:<input type="text" name="stuId"/><br><br>
+  课程号:<input type="text" name="couId"/><br><br>
+  <input type="submit" value="查询"/>
+  </form>
   </center>
   </body>
 </html>

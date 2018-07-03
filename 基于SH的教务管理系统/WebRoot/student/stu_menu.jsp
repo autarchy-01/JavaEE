@@ -123,7 +123,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <span>常用操作</span>
  <li><a href="slookMessageAction">学生学籍</a></li>
  <li><a href="lookRequiredScoreAction">成绩查询</a></li>
- <li><a href="<%=request.getContextPath()%>/student/changePwd.jsp">密码修改</a></li>
+ <li><a href="<%=request.getContextPath()%>/password/changePwd.jsp">密码修改</a></li>
  </ul>
  <ul>
   <span>选课系统</span>

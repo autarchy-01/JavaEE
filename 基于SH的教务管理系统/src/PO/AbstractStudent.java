@@ -15,7 +15,6 @@ public abstract class AbstractStudent implements java.io.Serializable {
 	private String sex;
 	private String department;
 	private String jiguan;
-	private Integer mark;
 	private String email;
 	private String image;
 	private String tel;
@@ -36,14 +35,13 @@ public abstract class AbstractStudent implements java.io.Serializable {
 
 	/** full constructor */
 	public AbstractStudent(Integer stuId, String username, String password, String sex, String department,
-			String jiguan, Integer mark, String email, String image, String tel, Integer max) {
+			String jiguan, String email, String image, String tel, Integer max) {
 		this.stuId = stuId;
 		this.username = username;
 		this.password = password;
 		this.sex = sex;
 		this.department = department;
 		this.jiguan = jiguan;
-		this.mark = mark;
 		this.email = email;
 		this.image = image;
 		this.tel = tel;
@@ -98,14 +96,6 @@ public abstract class AbstractStudent implements java.io.Serializable {
 
 	public void setJiguan(String jiguan) {
 		this.jiguan = jiguan;
-	}
-
-	public Integer getMark() {
-		return this.mark;
-	}
-
-	public void setMark(Integer mark) {
-		this.mark = mark;
 	}
 
 	public String getEmail() {

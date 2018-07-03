@@ -21,10 +21,10 @@ public class TeacherDao {
 	 */
 	public boolean teaLogin(Teacher tea) {
 		if(tea.getTeaId()!=null&&tea.getPassword()!=null){
-			session=HibernateSessionFactory.getSession();
 			try {
+				session=HibernateSessionFactory.getSession();
 				String hql="from Teacher as s where teaId='"+tea.getTeaId()+"'and password='"+tea.getPassword()+"'";
-				Query query=(Query)session.createQuery(hql);
+				query=(Query)session.createQuery(hql);
 				Teacher s=(Teacher)query.uniqueResult();
 				if(s!=null){
 					session.close();
@@ -54,7 +54,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("saveScore.error:"+e);
 			e.printStackTrace();
 			}
 		}
@@ -76,7 +75,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("findInfo.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -99,7 +97,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getStudentAmount.erro"+e);
 			e.printStackTrace();
 			return studentAmount;
 			}
@@ -122,7 +119,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("findCourse.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -142,7 +138,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getTeacher.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -167,7 +162,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("setEmail.erro"+e);
 			e.printStackTrace();
 			return false;
 			}
@@ -192,7 +186,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("changePwd.erro"+e);
 			e.printStackTrace();
 			return false;
 			}
@@ -214,7 +207,6 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getScore.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -236,18 +228,8 @@ public class TeacherDao {
 			if(session!=null){
 				session.close();
 				}
-			message("updateScore.erro"+e);
 			e.printStackTrace();
 			return false;
 			}
-		}
-	/**
-	 * 报错提示
-	 * @param mess 
-	 */
-	public static void message(String mess) {
-		int type=JOptionPane.YES_NO_OPTION;
-		String title ="提示信息";
-		JOptionPane.showMessageDialog(null, mess,title,type);
 		}
 	}

@@ -22,7 +22,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body style="background: url('images/中间.png') no-repeat;">
     This is my JSP page. <br>
   </body>
 </html>

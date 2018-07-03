@@ -1,76 +1,134 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<package name="teacher" extends="struts-default">
-<action name="judgeEmailAction" class="teacherAction.JudgeEmailAction">
-<result name="success">/teacher/setEmail.jsp</result>
-<result name="input">/teacher/tea_index.jsp</result>
-</action>
+<!-- 登录 -->
+<package name="login" extends="struts-default">
 <action name="loginAction" class="loginAction.LoginAction">
-<result name="success">/student/stu_index.jsp</result>
+<result name="success" type="chain">judgeEmailAction</result>
 <result name="tsuccess" type="chain">judgeEmailAction</result>
-<result name="asuccess">/admin/setEmail.jsp</result>
+<result name="asuccess">/admin/adm_index.jsp</result>
 <result name="input">/index.jsp</result>
 </action>
-<action name="setEmailAction" class="teacherAction.SetEmailAction">
-<result name="success">/teacher/tea_index.jsp</result>
-<result name="input">/teacher/setEmail.jsp</result>
+</package>
+<!-- email -->
+<package name="email" extends="struts-default">
+<!-- 判断email是否设置 -->
+<action name="judgeEmailAction" class="emailAction.JudgeEmailAction">
+<result name="success">/email/setEmail.jsp</result>
+<result name="student">/student/stu_index.jsp</result>
+<result name="teacher">/teacher/tea_index.jsp</result>
 </action>
-<action name="uploadAction" class="teacherAction.UploadAction">
-<result name="success">/teacher/success.jsp</result>
-<result name="input">/teacher/upload.jsp</result>
+<!-- 设置email -->
+<action name="setEmailAction" class="emailAction.SetEmailAction">
+<result name="student">/student/stu_index.jsp</result>
+<result name="teacher">/teacher/tea_index.jsp</result>
+<result name="input">/email/setEmail.jsp</result>
 </action>
-<action name="lookMessageAction" class="teacherAction.LookMessageAction">
-<result name="success">/teacher/lookMessage.jsp</result>
-<result name="input">/teacher/tea_index.jsp</result>
+</package>
+<!-- 将表格信息导入数据库 -->
+<package name="upload" extends="struts-default">
+<action name="uploadAction" class="uploadAction.UploadAction">
+<result name="success">/upload/uploadSuccess.jsp</result>
+<result name="input">uploadError.jsp</result>
 </action>
+</package>
+<!-- 分页查询 -->
+<package name="paging" extends="struts-default">
+<action name="lookMessageAction" class="pagingAction.LookMessageAction">
+<result name="teacher">/teacher/lookMessage.jsp</result>
+<result name="admin">/admin/lookMessage.jsp</result>
+<result name="tea">/admin/lookTeacher.jsp</result>
+<result name="input">/teacher/padingError.jsp</result>
+</action>
+</package>
+<!-- 修改密码 -->
+<package name="password" extends="struts-default">
+<action name="changePwdAction" class="passwordAction.ChangePwdAction">
+<result name="success">/password/changePwdSuccess.jsp</result>
+<result name="input">/password/changePwd.jsp</result>
+</action>
+</package>
+<!-- 教师 -->
+<package name="teacher" extends="struts-default">
+<!-- 查看课程表 -->
 <action name="findCourseAction" class="teacherAction.FindCourseAction">
 <result name="success">/teacher/lookCourse.jsp</result>
-<result name="input">/teacher/tea_index.jsp</result>
+<result name="input">/teacher/padingError.jsp</result>
 </action>
+<!-- 查看教师信息 -->
 <action name="findTeacherAction" class="teacherAction.FindTeacherAction">
 <result name="success">/teacher/lookPerson.jsp</result>
-<result name="input">/teacher/tea_index.jsp</result>
+<result name="input">/teacher/padingError.jsp</result>
 </action>
-<action name="changePwdAction" class="teacherAction.ChangePwdAction">
-<result name="success">/teacher/success.jsp</result>
-<result name="input">/teacher/changePwd.jsp</result>
-</action>
+<!-- 查找成绩 -->
 <action name="findScoreAction" class="teacherAction.FindScoreAction">
 <result name="success">/teacher/changeScore.jsp</result>
 <result name="input">/teacher/findScore.jsp</result>
 </action>
+<!-- 修改成绩 -->
 <action name="changeScoreAction" class="teacherAction.ChangeScoreAction">
-<result name="success" type="chain">lookMessageAction</result>
+<result name="success">/teacher/changeCourseSuccess.jsp</result>
 <result name="input">/teacher/findScore.jsp</result>
 </action>
 </package>
+<!-- 学生 -->
 <package name="student" extends="struts-default">
+<!-- 查看个人信息 -->
 <action name="slookMessageAction" class="studentAction.LookMessageAction">
 <result name="success">/student/lookMessage.jsp</result>
 </action>
+<!-- 查看必修课成绩 -->
 <action name="lookRequiredScoreAction" class="studentAction.FindScoreAction">
 <result name="success">/student/lookRequiredScore.jsp</result>
-<result name="input">/index.jsp</result>
 </action>
-<action name="schangePwdAction" class="studentAction.ChangePwdAction">
-<result name="success">/student/success.jsp</result>
-<result name="input">/student/changePwd.jsp</result>
-</action>
+<!-- 查看选修课 -->
 <action name="getElectiveAction" class="studentAction.getElectiveAction">
 <result name="success">/student/getElective.jsp</result>
 <result name="input">/index.jsp</result>
 </action>
+<!-- 选择选修课 -->
 <action name="setElectiveAction" class="studentAction.setElectiveAction">
 <result name="success">/student/getElective.jsp</result>
-<result name="input">/index.jsp</result>
+<result name="input">/student/getEltctiveError.jsp</result>
 </action>
+<!-- 查看已选选修课 -->
 <action name="lookElectiveAction" class="studentAction.LookElectiveAction">
 <result name="success">/student/lookElective.jsp</result>
-<result name="input">/index.jsp</result>
 </action>
+<!-- 查看选修课成绩 -->
 <action name="lookElectiveScoreAction" class="studentAction.LookElectiveScoreAction">
 <result name="success">/student/lookElectiveScore.jsp</result>
+</action>
+</package>
+<!-- 管理员 -->
+<package name="admin" extends="struts-default">
+<!-- 添加学生 -->
+<action name="addStudentAction" class="adminAction.AddStudentAction">
+<result name="success">/admin/addStudentSuccess.jsp</result>
+<result name="input">/admin/addStudentError.jsp</result>
+</action>
+<!-- 查找指定学生 -->
+<action name="findStudentAction" class="adminAction.FindStudentAction">
+<result name="success">/admin/changeStudent.jsp</result>
+<result name="input">/admin/findStudentError.jsp</result>
+</action>
+<!-- 修改学生信息 -->
+<action name="changeStudentAction" class="adminAction.ChangeStudentAction">
+<result name="success">/admin/changeStudentSuccess.jsp</result>
+<result name="input">/admin/changeStudentError.jsp</result>
+</action>
+<!-- 删除学生 -->
+<action name="deleteStudentAction" class="adminAction.DeleteStudentAction">
+<result name="success">/admin/deleteStudentSuccess.jsp</result>
+</action>
+<!-- 添加教师 -->
+<action name="addTeacherAction" class="adminAction.AddTeacherAction">
+<result name="success">/admin/addTeacherSuccess.jsp</result>
+<result name="input">/admin/addTeacherError.jsp</result>
+</action>
+<!-- 删除教师 -->
+<action name="deleteTeacherAction" class="adminAction.DeleteTeacherAction">
+<result name="success">/admin/deleteTeacherSuccess.jsp</result>
 </action>
 </package>
 </struts>    

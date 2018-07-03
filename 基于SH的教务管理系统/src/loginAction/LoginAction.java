@@ -47,6 +47,7 @@ public class LoginAction extends ActionSupport{
 				Student stu1=sm.getStudent(Integer.parseInt(getSno()));
 				session.setAttribute("username", stu1.getUsername());
 				session.setAttribute("id", stu1.getStuId());
+				session.setAttribute("radiobutton", this.radiobutton);
 				return SUCCESS;
 			}
 			
@@ -60,13 +61,21 @@ public class LoginAction extends ActionSupport{
 				Teacher tea1=te.getTeacher(Integer.parseInt(getSno()));
 				session.setAttribute("username", tea1.getUsername());
 				session.setAttribute("id", tea1.getTeaId());
+				session.setAttribute("radiobutton", this.radiobutton);
 				return "tsuccess";
 			}
 		}else if (radiobutton==3) {
 			Admin adm=new Admin();
 			adm.setAdmId(Integer.parseInt(getSno()));
 			adm.setPassword(getPassword());
+			System.out.println(ad.admLogin(adm));
 			if(ad.admLogin(adm)){
+				request=ServletActionContext.getRequest();
+				HttpSession session=request.getSession();
+				Admin adm1=ad.getAdmin(Integer.parseInt(getSno()));
+				session.setAttribute("username", adm1.getUsername());
+				session.setAttribute("id", adm1.getAdmId());
+				session.setAttribute("radiobutton", this.radiobutton);
 				return "asuccess";
 			}
 		}else{

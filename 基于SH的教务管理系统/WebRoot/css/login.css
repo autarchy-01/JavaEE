@@ -1,6 +1,35 @@
 @CHARSET "UTF-8";
 .style1{
-	margin-top: 300px;
-	margin-left: 850px
-
+	margin-top: 230px;
+	margin-left: 924px;
 }
+.username{
+	outline:none;
+	padding-left:55px;
+	height: 55px;
+	width:386px;
+	font-size:20;
+	font-family:微软雅黑;
+	color:#4b4c4c;
+	border-color:2f73d8;
+    background-color: #f6f6f6;
+    border:2px solid #FF8C00;
+    float:left;
+	}  
+.password{
+	outline:none;
+	border:0px;
+    padding-left: 55px;
+    height: 55px;
+    width:386px;
+    font-size:20;
+    background-color: #f6f6f6;
+	}
+.login{
+    width: 386px;
+    height: 50px;
+    background-color:#396ebe;
+    font-size:20;
+    font-family:微软雅黑;
+    color:white;
+	}

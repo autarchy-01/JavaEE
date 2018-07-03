@@ -18,8 +18,8 @@ public class Student extends AbstractStudent implements java.io.Serializable {
 
 	/** full constructor */
 	public Student(Integer stuId, String username, String password, String sex, String department, String jiguan,
-			Integer mark, String email, String image, String tel, Integer max) {
-		super(stuId, username, password, sex, department, jiguan, mark, email, image, tel, max);
+			String email, String image, String tel, Integer max) {
+		super(stuId, username, password, sex, department, jiguan, email, image, tel, max);
 	}
 
 }

@@ -18,11 +18,8 @@ public class LookElectiveAction extends ActionSupport{
 		request=ServletActionContext.getRequest();
 		HttpSession session=request.getSession();
 		List list=dao.lookElective((Integer)session.getAttribute("id"));
-		if(list.size()!=0){
 			session.setAttribute("lookElective", list);
 			return SUCCESS;
-		}
-		return INPUT;
 	}
 
 }

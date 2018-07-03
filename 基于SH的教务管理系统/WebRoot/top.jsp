@@ -33,7 +33,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <td align="right" height="47" style="padding-right: 10px;line-height: 26px;vertical-align: middle;">
   	您好:<span><s:property value="#session.username" /></span>,欢迎登陆教务管理系统!
   	[<a href="<%=request.getContextPath()%>/index.jsp" target="_blank">登录页面</a>]
-  	[<a href="#" target="main">修改密码</a>]
+  	[<a href="<%=request.getContextPath()%>/password/changePwd.jsp" target="main">修改密码</a>]
   	[<a href="#" target="_top">退出系统</a>]
   	</td>
   </tr>

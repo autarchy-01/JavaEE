@@ -24,7 +24,7 @@ public class StudentDao {
 			session=HibernateSessionFactory.getSession();
 			try {
 				String hql="from Student as s where stuId='"+stu.getStuId()+"'and password='"+stu.getPassword()+"'";
-				Query query=(Query)session.createQuery(hql);
+				query=(Query)session.createQuery(hql);
 				Student s=(Student)query.uniqueResult();
 				if(s!=null){
 					session.close();
@@ -38,6 +38,30 @@ public class StudentDao {
 				}
 			}
 		return false;
+		}
+	/**
+	 * 设置email
+	 * @param stuId 学生id
+	 * @param email 要设置的email
+	 * @return boolean
+	 */
+	public boolean setEmail(int stuId,String email) {
+		try {
+			session=HibernateSessionFactory.getSession();
+			transaction=session.beginTransaction();
+			Student stu=(Student)session.get(Student.class, stuId);
+			stu.setEmail(email);
+			session.update(stu);
+			transaction.commit();
+			session.close();
+			return true;
+			} catch (Exception e) {
+			if(session!=null){
+				session.close();
+				}
+			e.printStackTrace();
+			return false;
+			}
 		}
 	/**
 	 * 获取一条Student记录
@@ -54,7 +78,6 @@ public class StudentDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getTeacher.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -76,7 +99,6 @@ public class StudentDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getTeacher.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -101,7 +123,6 @@ public class StudentDao {
 			if(session!=null){
 				session.close();
 				}
-			message("changePwd.erro"+e);
 			e.printStackTrace();
 			return false;
 			}
@@ -122,7 +143,6 @@ public class StudentDao {
 			if(session!=null){
 				session.close();
 				}
-			message("getElective.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -139,14 +159,15 @@ public class StudentDao {
 			query=session.createQuery(hql);
 			if(query.list()!=null){
 				int count=query.list().size();
+				session.close();
 				return count;
 				}
+			session.close();
 			return 0;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
 				}
-			message("getNumber.erro"+e);
 			e.printStackTrace();
 			return 0;
 			}
@@ -171,7 +192,6 @@ public class StudentDao {
 			if(session!=null){
 				session.close();
 				}
-			message("setElective.erro"+e);
 			e.printStackTrace();
 			return false;
 		}
@@ -187,12 +207,12 @@ public class StudentDao {
 			String hql="select new Course(c.couId,c.couName,c.max,c.room,c.time) from Course c,Selclass s where typ='选修' and s.id.couId=c.couId and s.id.stuId="+stuId;
 			query=session.createQuery(hql);
 			List list=query.list();
+			session.close();
 			return list;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
 				}
-			message("lookElective.erro"+e);
 			e.printStackTrace();
 			return null;
 			}
@@ -210,14 +230,15 @@ public class StudentDao {
 			query=session.createQuery(hql);
 			List list=query.list();
 			if(list.size()!=0){
+				session.close();
 				return true;
 				}
+			session.close();
 			return false;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
 				}
-			message("lookElective.erro"+e);
 			e.printStackTrace();
 			return false;
 			}
@@ -231,12 +252,12 @@ public class StudentDao {
 		try {
 			session=HibernateSessionFactory.getSession();
 			Course cou=session.get(Course.class, couId);
+			session.close();
 			return cou;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
-				}
-			message("getCourse.erro"+e);
+			}
 			e.printStackTrace();
 			return null;
 			}
@@ -253,14 +274,15 @@ public class StudentDao {
 			query=session.createQuery(hql);
 			if(query.list()!=null){
 				int count=query.list().size();
+				session.close();
 				return count;
 				}
+			session.close();
 			return 0;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
 				}
-			message("getElectiveNumber.erro"+e);
 			e.printStackTrace();
 			return 0;
 			}
@@ -276,24 +298,14 @@ public class StudentDao {
 			String hql="select c.couId,c.couName,c.mark,s.score from Selclass s,Course c where c.typ='选修' and s.id.couId=c.couId and s.id.stuId="+stuId;
 			query=session.createQuery(hql);
 			List list=query.list();
+			session.close();
 			return list;
-		} catch (Exception e) {
-			if(session!=null){
-				session.close();
+			} catch (Exception e) {
+				if(session!=null){
+					session.close();
+					}
+				e.printStackTrace();
+				return null;
 				}
-			message("getElectiveNumber.erro"+e);
-			e.printStackTrace();
-			return null;
-		}
-	}
-	
-	/**
-	 * 报错提示
-	 * @param mess 
-	 */
-	public static void message(String mess) {
-		int type=JOptionPane.YES_NO_OPTION;
-		String title ="提示信息";
-		JOptionPane.showMessageDialog(null, mess,title,type);
 		}
 	}

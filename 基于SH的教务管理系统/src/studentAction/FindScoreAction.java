@@ -18,13 +18,8 @@ public class FindScoreAction extends ActionSupport{
 		request=ServletActionContext.getRequest();
 		HttpSession session=request.getSession();
 		List list=dao.getRequiredScore((Integer)session.getAttribute("id"));
-		if(list.size()!=0){
 			session.setAttribute("required", list);
-			return SUCCESS;
-		}
-		return INPUT;
-		
-		
+			return SUCCESS;	
 	}
 
 }

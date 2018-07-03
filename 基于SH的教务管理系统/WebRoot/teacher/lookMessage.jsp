@@ -95,15 +95,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </s:if>
         
         <s:else>
-            <a href="lookMessageAction.action">首页</a>
+            <a href="lookMessageAction.action?a=0">首页</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.currentPage - 1"/>">上一页</a>&nbsp;&nbsp;&nbsp;<s:property value="#request.pageBean.currentPage"/>/<s:property value="#request.pageBean.totalPage"/>&nbsp;&nbsp;&nbsp;
+            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.currentPage - 1"/>&a=0">上一页</a>&nbsp;&nbsp;&nbsp;<s:property value="#request.pageBean.currentPage"/>/<s:property value="#request.pageBean.totalPage"/>&nbsp;&nbsp;&nbsp;
         </s:else>
         
         <s:if test="#request.pageBean.currentPage != #request.pageBean.totalPage">
-            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.currentPage + 1"/>">下一页</a>
+            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.currentPage + 1"/>&a=0">下一页</a>
             &nbsp;&nbsp;&nbsp;
-            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.totalPage"/>">尾页</a>
+            <a href="lookMessageAction.action?page=<s:property value="#request.pageBean.totalPage"/>&a=0">尾页</a>
         </s:if>
         
         <s:else>
@@ -111,6 +111,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </s:else>
         <form action="lookMessageAction" onsubmit="return validate();">
             <input type="text" size="2" name="page">页
+            <input type="hidden" name="a" value="0">
             <input type="submit" value="跳转">
         </form>
   </center>
