@@ -20,28 +20,59 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
   </head>
   
-  <body bgcolor="pink">
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;"
+>
   <center>
-  <s:div>
+  <h2>添加教师信息</h2>
   <br>
-  <font color="red" size="6">添加教师信息</font>
-  </s:div>
+  <br>
+  <br>
   <s:form action="addTeacherAction" method="post">
-  <table width="30%" bgcolor="gray" border="5">
-  <tr>
-  <td><s:textfield name="id" label="教师号" maxlength="16"></s:textfield></td>
-  <td><s:textfield name="name" label="姓名"></s:textfield></td>
-  <td><s:textfield name="password" label="密码"></s:textfield></td>
-  <td><s:textfield name="tel" label="电话"></s:textfield></td>
-  <td colspan="2">
-  <s:submit value="提交"></s:submit>
-  <s:reset value="清除"></s:reset>
-  </td>
-  </tr>
-  </table>
+  <input type="text" name="id" placeholder="请输入教师号" maxlength="16" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679; width: 170px"><br><br>
+  <input type="text" name="name" placeholder="请输入姓名" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679; width: 170px"><br><br>
+  <input type="text" name="password" placeholder="请输入密码" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679; width: 170px"><br><br>
+  <input type="text" name="tel" placeholder="请输入电话" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679; width: 170px"><br><br>
+  <input type="submit" value="提交" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 165px; 
+    height: 35px"><br><br>
+  <input type="reset" value="清除" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 165px; 
+    height: 35px"><br><br>
   </s:form>
   </center>
   </body>

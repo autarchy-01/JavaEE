@@ -17,15 +17,45 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
-
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
   </head>
-  <body>
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
-  <h3>搜索要修改的学生学号和课程号</h3>
+  <h2>搜索要修改的学生学号和课程号</h2>
+  <br>
+  <br>
+  <br>
   <form action="findScoreAction" method="post">
-  学&nbsp;&nbsp;号:<input type="text" name="stuId"/><br><br>
-  课程号:<input type="text" name="couId"/><br><br>
-  <input type="submit" value="查询"/>
+  <input type="text" name="stuId"
+  	placeholder="请输入学号"
+	style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  <input type="text" name="couId"
+  	placeholder="请输入课程号"
+	style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  <input type="submit" value="查询"
+  style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 140px; 
+    height: 30px"/>
   </form>
   </center>
   </body>

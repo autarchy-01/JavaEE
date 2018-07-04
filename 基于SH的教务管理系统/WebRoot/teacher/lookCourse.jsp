@@ -19,13 +19,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
   </head>
   
-  <body>
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
-  <h3>课程信息</h3>
-  <table border="4">
+  <h2>课程信息</h2>
+  <br>
+  <br>
+  <br>
+  <table     border="1" cellpadding="0" 
+    cellspacing="0" 
+    style="background-color:#f5f6f8;
+    width: 500px">
   <tr>
   <th>时间</th>
   <th>课程</th>

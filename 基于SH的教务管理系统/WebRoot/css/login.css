@@ -1,13 +1,13 @@
 @CHARSET "UTF-8";
 .style1{
 	margin-top: 230px;
-	margin-left: 924px;
+	margin-left: 935px;
 }
 .username{
 	outline:none;
-	padding-left:55px;
-	height: 55px;
-	width:386px;
+	border:0px;
+	padding-left:45px;
+	height: 40px;
 	font-size:20;
 	font-family:微软雅黑;
 	color:#4b4c4c;
@@ -19,17 +19,22 @@
 .password{
 	outline:none;
 	border:0px;
-    padding-left: 55px;
-    height: 55px;
-    width:386px;
+    padding-left: 45px;
+    height: 40px;
+    width:340px;
     font-size:20;
     background-color: #f6f6f6;
 	}
 .login{
-    width: 386px;
-    height: 50px;
+    width: 300px;
+    height: 40px;
     background-color:#396ebe;
     font-size:20;
     font-family:微软雅黑;
     color:white;
+	}
+.main{
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;
 	}

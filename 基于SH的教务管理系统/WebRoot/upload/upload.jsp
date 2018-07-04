@@ -20,17 +20,41 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
   </head>
   
-  <body>
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
     <center>
   <h2>导入数据</h2>
-  <hr>
+  <br>
+  <br>
+  <br>
   <s:form action="uploadAction" method="post">
-  <s:textfield name="lujin" label="文件路径"></s:textfield><br/>
-  <s:textfield name="yema" label="文件页码"></s:textfield><br/>
-  <s:submit value="上传"></s:submit>
+  <input type="text" name="lujin" placeholder="文件路径" 	style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"><br><br>
+  <input type="text" name="yema"  placeholder="文件页码"	style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"><br><br>
+  <input type="submit" value="上传" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 140px; 
+    height: 30px">
   </s:form>
   </center>
   </body>

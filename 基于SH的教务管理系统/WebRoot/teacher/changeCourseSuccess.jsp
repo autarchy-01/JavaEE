@@ -20,6 +20,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+		<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
 	<script type="text/javascript">
 	var x=3;
 	onload=function(){
@@ -37,6 +43,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>添加学生成功,页面将在<span id="time">3</span>秒后跳转到查看学生信息页面</h3>
+    <h3>修改成绩成功,页面将在<span id="time" style="color:red">3</span>秒后跳转到查看学生信息页面</h3>
   </body>
 </html>

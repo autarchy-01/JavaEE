@@ -37,6 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>你的选课数已达上限或你已选该门课程,页面将在<span id="time">3</span>秒后跳转到查看已选选课页面</h3>
+    <h3 style="font-family:微软雅黑;">你的选课数已达上限或你已选该门课程,页面将在<span id="time" style="color:red">3</span>秒后跳转到查看已选选课页面</h3>
   </body>
 </html>

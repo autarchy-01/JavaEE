@@ -37,6 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>删除教师成功,页面将在<span id="time">3</span>秒后跳转到查看教师信息页面</h3>
+    <h3>删除教师成功,页面将在<span id="time" style="color:red">3</span>秒后跳转到查看教师信息页面</h3>
   </body>
 </html>

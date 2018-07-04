@@ -107,18 +107,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 <style type="text/css">
 *{margin:0;padding:0;}
-.foldmenu{border:1px solid #000;width:150px;margin:50px;}
+.foldmenu{border:1px solid #000000;width:150px;margin:50px;}
 .foldmenu ul{list-style-type:none;height:25px;line-height:25px;overflow:hidden;cursor:pointer;}
-.foldmenu ul.open{height:auto;color: cyan}
-.foldmenu ul span{display:block;padding-left:5px;font-size:20px }
-.foldmenu ul li{border-bottom:1px solid #DDDDDD;}
-.foldmenu li a{background-color:#EEEEEE;color:#006666;display:block;padding:5px 10px;text-decoration:none;text-align:center;}
-.foldmenu li a:hover{background-color:#006666;color:#ffffff;}
-.foldmenu li a.current{background-color:#006666;color:#ffffff;}
+.foldmenu ul.open{height:auto;color: #343345;outline:none;
+	border:0px;}
+.foldmenu ul span{display:block;padding-left:5px;font-size:20px;color:white }
+.foldmenu ul li{border-bottom:1px solid white;}
+.foldmenu li a{outline:none;border:0px;border:0px solid #000000;background-color:#343345;color:white;display:block;padding:5px 10px;text-decoration:none;text-align:center;}
+.foldmenu li a:hover{background-color:#396ebe;color:#343345;}
+.foldmenu li a.current{background-color:#343345;color:white;}
 </style>
 </head>
-<body>
-<div id="foldmenu" class="foldmenu" style="float:left;">
+<body style="background: url('images/左.png')repeat 0px 0px;background-size: cover;">
+<div id="foldmenu" class="foldmenu" style="float:left;margin-left:20;outline:none;
+	border:0px;">
  <ul class="open">
   <span>常用操作</span>
  <li><a href="slookMessageAction">学生学籍</a></li>

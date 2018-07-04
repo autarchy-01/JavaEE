@@ -18,6 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
 
   </head>
   <body>
@@ -25,17 +31,47 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <h3>修改</h3>
   <s:form action="changeStudentAction" method="post">
   <%Student stu=(Student)session.getAttribute("student"); %>
-  <table>
-  <tr><td>学号<input name="id" readonly="readonly" value="<%=stu.getStuId() %>"/></td></tr>
-  <tr><td>姓名<input name="name" value="<%=stu.getUsername() %>"/></td></tr>
-  <tr><td>密码<input name="password" value="<%=stu.getPassword() %>"/></td></tr>
-  <tr><td>性别<input name="sex" value="<%=stu.getSex() %>"/></td></tr>
-  <tr><td>系别<input name="department" value="<%=stu.getDepartment() %>"/></td></tr>
-  <tr><td>籍贯<input name="jiguan" value="<%=stu.getJiguan() %>"/></td></tr>
-  <tr><td>电话<input name="tel" value="<%=stu.getTel() %>"/></td></tr>
-  <tr><td>选课<input name="max" value="<%=stu.getMax() %>"/></td></tr>
- <tr><td><s:submit value="修改"/></td></tr>
-  </table>
+  学号&nbsp;:&nbsp;<input name="id" readonly="readonly" value="<%=stu.getStuId() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  姓名&nbsp;:&nbsp;<input name="name" value="<%=stu.getUsername() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  密码&nbsp;:&nbsp;<input name="password" value="<%=stu.getPassword() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  性别&nbsp;:&nbsp;<input name="sex" value="<%=stu.getSex() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  系别&nbsp;:&nbsp;<input name="department" value="<%=stu.getDepartment() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  籍贯&nbsp;:&nbsp;<input name="jiguan" value="<%=stu.getJiguan() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  电话&nbsp;:&nbsp;<input name="tel" value="<%=stu.getTel() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+  选课&nbsp;:&nbsp;<input name="max" value="<%=stu.getMax() %>" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/><br><br>
+ <input type="submit" value="修改" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 180px; 
+    height: 30px"/>
   </s:form>
   </center>
   </body>

@@ -17,14 +17,37 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
 
   </head>
-  <body>
+  <body  style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
-  <h3>搜索要修改的学生学号</h3>
+  <h2>搜索要修改的学生学号</h2>
+  <br>
+  <br>
+  <br>
   <form action="findStudentAction" method="post">
-  学号:&nbsp;<input type="text" placeholder="请输入学号" name="stuId"/>&nbsp;&nbsp;
-  <input type="submit" value="查询"/>
+  学号&nbsp;:&nbsp;<input type="text" placeholder="请输入学号" name="stuId" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/>&nbsp;&nbsp;
+  <input type="submit" value="查询" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 90px; 
+    height: 30px"/>
   </form>
   </center>
   </body>

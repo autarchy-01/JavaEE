@@ -26,31 +26,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                background-size: cover;
                ">
   <s:form action="loginAction" method="post">
-  <table class="style1" cellspacing="18">
+  <table class="style1" cellspacing="14">
   <tr>
    <td>
-   <input type="text" name="sno" class="username" 
+   <input type="text" name="sno" placeholder="请输入用户名"class="username" 
     style="
     background:url(images/用户名.png)no-repeat scroll left center transparent;
-    border:2px solid #2f73d8;float:left;border-radius:5px;
-    ">
+    border:2px solid #2f73d8;float:left;border-radius:5px; width: 300px">
     </td>
   </tr>
     <tr>
-   <td><input type="password" name="password"  class="password"
+   <td><input type="password" name="password"  placeholder="请输入密码"  class="password"
     style="
     background:url(images/密码.png)no-repeat scroll left center transparent;
-    border:2px solid #2f73d8;float:left; border-radius:5px;">
+    border:2px solid #2f73d8;float:left; border-radius:5px; width: 300px">
    </td>
   </tr>
   <tr>
-  <td colspan="10" style="width: 386px; "><span style="font-size:20;color:#003366;">权  限</span>
-    <select name="radiobutton" style="width: 336px; height: 46px; border-right: #000000 1px solid;
-     border-top: #ffffff 0px solid;
-     font-size: 20px; 
-     border-left: #ffffff 1px solid;
+  <td colspan="10" style="width: 386px; "><span style="font-size:20;color:#003366;">权限:</span>
+    <select name="radiobutton" style="width: 250px; height: 40px; outline:none;
+     font-size: 18px; 
      color:#003366;
-     border-bottom: #000000 1px solid;
      background-color: #f4f4f4;
      border-radius:4px;">
     <option value="1">学        生</option>

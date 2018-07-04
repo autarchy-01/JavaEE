@@ -18,6 +18,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+    <style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
 	<script type="text/javascript">
     
         function validate()
@@ -43,15 +49,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body bgcolor="pink">
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
-  <s:div>
-  <hr color="red">
+  <h2>学生信息</h2>
   <br>
-  <hr color="red">
-  <br><br><br>
-  </s:div>
-  <table width="80%" border="5">
+  <br>
+  <br>
+  <table width="80%"border="1" cellpadding="0" 
+    cellspacing="0" 
+    style="background-color:#f5f6f8;">
   <tr>
   <th>学号</th>
   <th>姓名</th>
@@ -110,9 +119,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             下一页&nbsp;&nbsp;&nbsp;尾页
         </s:else>
         <form action="lookMessageAction" onsubmit="return validate();">
-            <input type="text" size="2" name="page">页
+            <input type="text" size="2" 	style="border-radius:5px; 
+	        outline:none;
+	        border:2px solid #666679; width: 40px; height: 20px"name="page">&nbsp;页
             <input type="hidden" name="a" value="0">
-            <input type="submit" value="跳转">
+            <input type="submit" value="跳转" 
+            style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 50px; 
+    height: 25px">
         </form>
   </center>
   </body>

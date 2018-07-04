@@ -20,7 +20,7 @@ public class JudgeEmailAction extends ActionSupport{
 		if((Integer)session.getAttribute("radiobutton")==1){
 			StudentDao dao=new StudentDao();
 			Student student=dao.getStudent((Integer)session.getAttribute("id"));
-			if(student.getEmail()==null){
+			if(student.getEmail()==null||student.getEmail()=="null"){
 				return SUCCESS;
 				}
 			else{
@@ -29,7 +29,7 @@ public class JudgeEmailAction extends ActionSupport{
 			}else if ((Integer)session.getAttribute("radiobutton")==2){
 				TeacherDao dao=new TeacherDao();
 				Teacher teacher=dao.getTeacher((Integer)session.getAttribute("id"));
-				if(teacher.getEmail()==null){
+				if(teacher.getEmail()==null||teacher.getEmail()=="null"){
 					return SUCCESS;
 					}
 				else{

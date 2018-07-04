@@ -19,16 +19,35 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
 
   </head>
   
-  <body>
+  <body style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;"
+  >
   <center>
-  <h3>设置你的新密码</h3>
+  <h2>设置你的新密码</h>
   <br>
-  <hr>
+  <br>
+  <br>
   <form action="changePwdAction">
-  密码:<input type="text" name="password"> &nbsp;&nbsp;&nbsp;<input type="submit" value="提交">
+  <input type="text" name="password" placeholder="请输入新的密码"
+  style="border-radius:5px; height: 30px;outline:none;border:2px solid #666679;"
+  >
+&nbsp;
+  <input type="submit" value="提交" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;border-radius:5px;outline:none;border:0px; height: 30px"
+  >
   </form>
   </center>
   </body>

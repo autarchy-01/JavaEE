@@ -36,6 +36,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>密码修改成功,<span id="time">3</span>秒后跳转到登录页面!</h3>
+    <h3>密码修改成功,<span id="time"style="color:red">3</span>秒后跳转到登录页面!</h3>
   </body>
 </html>

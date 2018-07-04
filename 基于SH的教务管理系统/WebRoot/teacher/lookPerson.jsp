@@ -19,16 +19,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+	<style type="text/css">
+	*{
+	text-decoration: none;
+	font-family:微软雅黑;
+	}
+	</style>
   </head>
   
-  <body>
+  <body     style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;"
+  >
   <center>
-  <h3>查看个人信息</h3>
+  <h2>查看个人信息</h2>
   <br>
-  <hr>
+  <br>
+  <br>
   <% Teacher tea=(Teacher)session.getAttribute("teacher"); %>
-  <table>
+  <table     border="1" cellpadding="0" 
+    cellspacing="0" 
+    style="background-color:#f5f6f8;">
   <tr><td>教师号:</td><td><%=tea.getTeaId() %></td></tr>
   <tr><td>姓名:</td><td><%=tea.getUsername() %></td></tr>
   <tr><td>邮箱:</td><td><%=tea.getEmail() %></td></tr>

@@ -22,13 +22,30 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;"
+  >
   <center>
-  <h3>设置你的Email</h3>
+  <h2>设置你的Email</h2>
   <br>
-  <hr>
+  <br>
+  <br>
   <form action="setEmailAction">
-  email:<input type="text" name="email"> &nbsp;&nbsp;&nbsp;<input type="submit" value="提交">
+  <input type="text" name="email" placeholder="请输入你的邮箱" style="border-radius:5px; 
+	height: 30px;
+	outline:none;
+	border:2px solid #666679;"/> &nbsp;&nbsp;
+	<input type="submit" value="提交" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;
+    outline:none;
+    border:0px; 
+    width: 90px; 
+    height: 30px"/>
   </form>
   </center>
   </body>

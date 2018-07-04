@@ -37,6 +37,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <h3>添加学生失败,页面将在<span id="time">3</span>秒后跳转到添加学生页面</h3>
+    <h3>添加学生失败,页面将在<span id="time" style="color:red">3</span>秒后跳转到添加学生页面</h3>
   </body>
 </html>

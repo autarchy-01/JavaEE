@@ -25,13 +25,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
   </head>
   
-  <body>
+  <body style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
   <s:form action="setElectiveAction" method="post">
-  <h3>查看选修课</h3>
+  <h2 style="font-family:微软雅黑;">选择选修课</h2>
   <br>
-  <hr>
-   <table border="5">
+  <br>
+  <br>
+   <table     border="1" cellpadding="0" 
+    cellspacing="0" 
+    style="background-color:#f5f6f8; width: 645px">
     <tr>
   <th>选择</th>
   <th>课程号</th>
@@ -61,9 +67,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     }
     }
     %>
-    <tr><td><input type="submit" value="提交"></td></tr>
+    </table>
+    <br>
+    <table>
+    <tr><td><input type="submit" value="提交" style="background-color:#396ebe;
+    font-size:17;
+    font-family:微软雅黑;
+    color:white;
+    border-radius:5px;outline:none;
+    border:0px; width: 91px; height: 35px"></td></tr>
   </table>
+    </s:form>
   </center>
-  </s:form>
   </body>
 </html>

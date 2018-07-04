@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   
 <frameset rows="80,*" cols="*" frameborder="no" border="0"framespacing="0">
 <frame src="<%=request.getContextPath()%>/top.jsp" name="topFrame" scrolling="no">
-<frameset cols="230,*" name="btFrame" frameborder="no" border="0"framespacing="0">
+<frameset cols="200,*" name="btFrame" frameborder="no" border="0"framespacing="0">
 <frame src="<%=request.getContextPath()%>/admin/adm_menu.jsp" noresize name="menu" scrolling="yes">
 <frame src="<%=request.getContextPath()%>/main.jsp" noresize name="main" scrolling="yes">
 </frameset>
