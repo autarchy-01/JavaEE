@@ -190,8 +190,8 @@ public class AdminDao {
 		}
 	/**
 	 * 查找指定教师
-	 * @param teaId 学生id
-	 * @return Student对象
+	 * @param teaId 教师id
+	 * @return 教师对象
 	 */
 	public Teacher getTeacher(int teaId) {
 		try {
@@ -213,18 +213,20 @@ public class AdminDao {
 	 * 修改教师
 	 * @param tea Teacher对象
 	 */
-	public void updateTeacher(Teacher tea) {
+	public boolean updateTeacher(Teacher tea) {
 		try {
 			session=HibernateSessionFactory.getSession();
 			transaction=session.beginTransaction();
 			session.update(tea);
 			transaction.commit();
 			session.close();
+			return true;
 			} catch (Exception e) {
 			if(session!=null){
 				session.close();
 				};
 			e.printStackTrace();
+			return false;
 			}
 	}
 	/**

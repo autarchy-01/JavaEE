@@ -26,9 +26,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	</style>
 
   </head>
-  <body>
+  <body style="
+	background:url('images/中间.png');
+    background-repeat: no-repeat;
+    background-size: cover;">
   <center>
-  <h3>修改</h3>
+  <h2>修改</h2>
+  <br>
+  <br>
+  <br>
   <s:form action="changeStudentAction" method="post">
   <%Student stu=(Student)session.getAttribute("student"); %>
   学号&nbsp;:&nbsp;<input name="id" readonly="readonly" value="<%=stu.getStuId() %>" style="border-radius:5px; 

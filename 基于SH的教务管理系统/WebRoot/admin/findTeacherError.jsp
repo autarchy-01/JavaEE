@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,9 +8,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-    <base href="<%=basePath%>" target="_self">
+    <base href="<%=basePath%>">
     
-    <title>main</title>
+    <title>My JSP 'error.jsp' starting page</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -19,9 +20,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
+	<script type="text/javascript">
+	var x=3;
+	onload=function(){
+	setInterval(function() {
+	x--;
+	if(x>0){
+	document.getElementById("time").innerHTML=x;
+	}else{
+	location.href="<%=request.getContextPath()%>/admin/findTeacher.jsp"
+	}
+	}, 1000)
+	}
+	</script>
 
   </head>
   
-  <body style="background: url('images/中间.png') no-repeat;">
+  <body>
+    <h3>没有找到教师号为${teaId}的教师,页面将在<span id="time" style="color:red">3</span>秒后跳转到查找教师页面</h3>
   </body>
 </html>

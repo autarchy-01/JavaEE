@@ -131,7 +131,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <span>选课系统</span>
  <li><a href="getElectiveAction">进入选课</a></li>
  <li><a href="lookElectiveAction">已选课程</a></li>
-  <li><a href="lookElectiveScoreAction">选课成绩</a></li>
+  <li><a href="lookElectiveScoreAction">选修成绩</a></li>
  </ul>
 </div>
 <script type="text/javascript">

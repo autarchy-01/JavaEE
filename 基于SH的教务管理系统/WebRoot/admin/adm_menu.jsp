@@ -131,17 +131,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <span>教师管理</span>
  <li><a href="lookMessageAction?a=1">查看教师</a></li>
  <li><a href="<%=request.getContextPath()%>/admin/addTeacher.jsp">添加教师</a></li>
- <li><a href="findCourseAction">修改教师</a></li>
+ <li><a href="<%=request.getContextPath()%>/admin/findTeacher.jsp">修改教师</a></li>
  </ul>
  <ul>
   <span>课程管理</span>
- <li><a href="<%=request.getContextPath()%>/teacher/changePwd.jsp">查看课程</a></li>
-  <li><a href="<%=request.getContextPath()%>/teacher/changePwd.jsp">添加课程</a></li>
-  <li><a href="<%=request.getContextPath()%>/teacher/changePwd.jsp">修改课程</a></li>
+ <li><a href="<%=request.getContextPath()%>/admin/ERROR.jsp">查看课程</a></li>
+  <li><a href="<%=request.getContextPath()%>/admin/ERROR.jsp">添加课程</a></li>
+  <li><a href="<%=request.getContextPath()%>/admin/ERROR.jsp">修改课程</a></li>
  </ul>
   <ul>
   <span>信息管理</span>
- <li><a href="findTeacherAction">查看个人信息</a></li>
+ <li><a href="<%=request.getContextPath()%>/admin/ERROR.jsp">查看个人信息</a></li>
   <li><a href="<%=request.getContextPath()%>/password/changePwd.jsp">修改密码</a></li>
  </ul>
 </div>

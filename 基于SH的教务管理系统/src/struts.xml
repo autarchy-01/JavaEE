@@ -126,6 +126,13 @@
 <result name="success">/admin/addTeacherSuccess.jsp</result>
 <result name="input">/admin/addTeacherError.jsp</result>
 </action>
+<!-- 查找指定教师 -->
+<action name="FindTeacherAction" class="adminAction.FindTeachertAction">
+<result name="success">/admin/changeTeacher.jsp</result>
+<result name="input">/admin/findTeacherError.jsp</result>
+</action>
+<action name="updateTeacherAction" class="adminAction.changeTeacherAction">
+</action>
 <!-- 删除教师 -->
 <action name="deleteTeacherAction" class="adminAction.DeleteTeacherAction">
 <result name="success">/admin/deleteTeacherSuccess.jsp</result>
